@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  padding: 5px;
+  display: flex;
+  background-color: rgb(223, 222, 222, 0.5);
+  min-height: 100vh;
+}
+.left {
+  width: 25%;
+  margin-right: 2px;
+  /* padding: 2px; */
+  /* border: 1px solid black; */
+  padding: 2px;
+}
+.right {
+  width: 75%;
+  /* border: 1px solid black; */
+}
+
+.LeftInner h3 {
+  background-color: white;
+  /* margin: 1px; */
+  text-align: center;
+  height: 7vh;
+  border-radius: 3px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.LeftInner .x1 {
+  margin-top: 2px;
+  background-color: white;
+  /* margin: 1px; */
+  border-radius: 3px;
+  min-height: 90vh;
+  /* text-align: center; */
+  height: 40px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.RightUpper {
+  border-radius: 3px;
+  background-color: white;
+  height: 25vh;
+ 
+}
+.RightLower {
+  border-radius: 3px;
+  background-color: white;
+  height: 72vh;
+  margin-top: 2px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.RightUpperInner h3 {
+  text-align: center;
+  height: 7vh;
+  border-radius: 3px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+ .x {
+  text-align: center;
+  height: 17vh;
+  border-radius: 3px;
+  margin-top: 2px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
