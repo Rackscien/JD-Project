@@ -5,7 +5,7 @@ const baseUrl=  "http://localhost:1000/device"
 const getAllDevice1 = (setDevice1,deviceId,date)=>{
     console.log(`Device Id ${deviceId}, `);
     console.log(`Date : ${date}`);
-    if(deviceId==undefined && date==undefined){
+    if(deviceId===undefined && date===undefined){
         axios
         .get(`${baseUrl}/`)
         .then(({data})=>{
@@ -15,7 +15,7 @@ const getAllDevice1 = (setDevice1,deviceId,date)=>{
             // console.log(device1);
         })
     }
-   else if(date==undefined){
+   else if(date===undefined){
         axios
         .get(`${baseUrl}/${deviceId}`)
         .then(({data})=>{
@@ -45,8 +45,8 @@ const addDevice1 =(sName,setSname,startTime,setStartTime,endTime,setEndTime,type
     .then((data)=>{
         console.log(data);
         setSname("");
-        setStartTime(null);
-        setEndTime(null);
+        setStartTime();
+        setEndTime();
         setType("");
         getAllDevice1(setDevice1,deviceId,date);
     })
