@@ -30,7 +30,7 @@ function Table({deviceId,setDeviceId,date}) {
   const [isChecked , setIsChecked] =useState(false)
   useEffect(() => {
     getAllDevice1(setDevice1,deviceId,date);
-    console.log(device1);
+    console.log(`PK ${deviceId}`);
   }, [deviceId,date]);
 
   

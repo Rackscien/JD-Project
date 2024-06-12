@@ -5,17 +5,20 @@ const baseUrl=  "http://localhost:1000/device"
 const getAllDevice1 = (setDevice1,deviceId,date)=>{
     console.log(`Device Id ${deviceId}, `);
     console.log(`Date : ${date}`);
-    if(deviceId===undefined && date===undefined){
+    if(deviceId && date){
+        // device id is there
         axios
-        .get(`${baseUrl}/`)
+        .get(`${baseUrl}/${deviceId}/${date}`)
         .then(({data})=>{
             // console.log(data)
             console.log('data--->',data)
             setDevice1(data);
             // console.log(device1);
+            console.log('du')
+
         })
-    }
-   else if(date===undefined){
+    }else if(deviceId){
+        // device id is there
         axios
         .get(`${baseUrl}/${deviceId}`)
         .then(({data})=>{
@@ -23,19 +26,86 @@ const getAllDevice1 = (setDevice1,deviceId,date)=>{
             console.log('data--->',data)
             setDevice1(data);
             // console.log(device1);
+            console.log('du')
+
+        })
+    } else {
+        // device id is not there but date is there
+        if(date){
+            axios
+        .get(`${baseUrl}/`)
+        .then(({data})=>{
+            // console.log(data)
+            console.log('data--->',data)
+            setDevice1(data);
+            // console.log(device1);
+            console.log('ud')
+
+        })
+    } else {
+                // device id is not there and date is not there
+
+             axios
+        .get(`${baseUrl}/`)
+        .then(({data})=>{
+            // console.log(data)
+            console.log('data--->',data)
+            setDevice1(data);
+            // console.log(device1);
+            console.log('ud')
+
         })
     }
+}
+//     if(deviceId===undefined && date===undefined){
+//         axios
+//         .get(`${baseUrl}/`)
+//         .then(({data})=>{
+//             // console.log(data)
+//             console.log('data--->',data)
+//             setDevice1(data);
+//             // console.log(device1);
+//             console.log('uu')
+//         })
+//     }
+//    else if(deviceId!==undefined && date===undefined){
+//         axios
+//         .get(`${baseUrl}/${deviceId}`)
+//         .then(({data})=>{
+//             // console.log(data)
+//             console.log('data--->',data)
+//             setDevice1(data);
+//             // console.log(device1);
+//             console.log('du')
 
-    else{
-        axios
-     .get(`${baseUrl}/${deviceId}/${date}`)
-    .then(({data})=>{
-        // console.log(data)
-        console.log('data--->',data)
-        setDevice1(data);
-        // console.log(device1);
-    })
-    }
+//         })
+//     }
+//     else if(deviceId===undefined ){
+//         console.log("deviceId===undefined", deviceId===undefined)
+//         axios
+//         .get(`${baseUrl}/`)
+//         .then(({data})=>{
+//             // console.log(data)
+//             console.log('data--->',data)
+//             setDevice1(data);
+//             // console.log(device1);
+//             console.log('ud')
+
+//         })
+//     }
+
+//     else{
+//         axios
+//      .get(`${baseUrl}/${deviceId}/${date}`)
+//     .then(({data})=>{
+//         // console.log(data)
+//         console.log('data--->',data)
+//         setDevice1(data);
+//         // console.log(device1);
+//         console.log('dd')
+
+//     })
+//     }
     
 }
 

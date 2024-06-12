@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-import { MdCalendarViewDay, MdOutlineHorizontalRule } from "react-icons/md";
-import Calendar from 'react-calendar';
+import React, { useState } from 'react'
 
-function WeekPlan({date,setDate}) {
-  const styl = {   
+function WeekPlan(date , setDate) {
+  const styl ={
     fontSize:"10px",
     borderRadius: "50%",
     border: "none",
@@ -15,9 +13,9 @@ function WeekPlan({date,setDate}) {
     cursor: "pointer",
     
   };
-  const [data,setData]=useState([11,12,13,14,15,16,17]);
-  // const [date, setDate] = useState(new Date());
+  
 
+  const [currentMonthIndex,setcurrentMonthIndex]=useState();
   const [rangeStart,setRangeStart]=useState(1);
   const sectionLength= 7;
 
@@ -73,6 +71,29 @@ function range(start, end) {
     // alert("Next is Clicked !");
   }
 
+function daysInMonth (month, year) {
+    return new Date(year, month, 0).getDate();
+}
+
+const months= ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+  
+
+const monthMap= {
+  "Jan": daysInMonth(1,2024),
+  "Feb": daysInMonth(2,2024),
+  "Mar": daysInMonth(3,2024),
+  "Apr": daysInMonth(4,2024),
+  "May": daysInMonth(5,2024),
+  "Jun": daysInMonth(6,2024),
+  "Jul": daysInMonth(7,2024),
+  "Aug": daysInMonth(8,2024),
+  "Sep": daysInMonth(9,2024),
+  "Oct": daysInMonth(10,2024),
+  "Nov": daysInMonth(11,2024),
+  "Dec": daysInMonth(12,2024),
+}
+
+console.log("monthMap", monthMap);
   return (
     <div >
       <div style={{display:"flex", alignItems:"center", justifyContent:"space-evenly",margin:"5px"}}>
@@ -97,7 +118,7 @@ function range(start, end) {
           padding: "20px",
         }}
       >
-        <button onClick={rangeStart>6 ? BackCalender: ()=>{} } style={{fontSize:"13px" , fontWeight:"bold", cursor:"pointer"}}>Back</button>
+        <button onClick={BackCalender} style={{fontSize:"13px" , fontWeight:"bold", cursor:"pointer"}}>Back</button>
         <button onClick={NextCalender} style={{fontSize:"13px" , fontWeight:"bold" ,  cursor:"pointer"}}>Next</button>
       </div>
     </div>

@@ -6,12 +6,18 @@ module.exports.getDevice1 = async (req, res)=>{
     const id=(req.params.deviceId) || undefined;
     const date=Number(req.params.date) || undefined;
     // const device1={};
-    if(date==undefined && id==undefined){
-        const device1 = await Device1Models.find({});
+    if(date===undefined && id===undefined){
+        const device1 = [];
+        // await Device1Models.find({});
         res.send(device1);
     }
-    else if(date==undefined){
+    else if(date===undefined){
         const device1 = await Device1Models.find({"deviceId":id});
+        res.send(device1);
+    }
+   else if(id===undefined){
+        const device1 = [];
+        // await Device1Models.find({});
         res.send(device1);
     }
 
